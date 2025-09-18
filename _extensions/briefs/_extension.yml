@@ -1,0 +1,16 @@
+title: briefs
+author: Gunther LMaier
+version: 1.0.0
+quarto-required: ">=1.6.0"
+contributes:
+  formats:
+    common:
+      toc: true
+    pdf:
+      include-in-header: header.tex
+      template-partials: 
+        - "partials/title.tex"
+        - "partials/before-body.tex"
+    html:
+      css: styles.css
+

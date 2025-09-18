@@ -1,0 +1,34 @@
+% START partial before-body
+%\AddToShipoutPicture*{\BackgroundPic}
+%\maketitle
+
+\makeatletter
+\begin{titlepage}
+	\begin{center}
+$-- %		\vspace*{20mm}
+		{\vspace*{10mm}\huge \bfseries  \@title }\\[2ex] 
+    \bigskip
+		{\LARGE  \@author}~\\[50ex] 
+$-- %		{\large \@date} 
+	\end{center}
+	\vspace{\fill}
+	\includegraphics[width=35mm]{../ERES_logo.png}\\[4mm]
+	{\Large Real Estate Briefs}
+\end{titlepage}
+\makeatother
+
+\thispagestyle{empty}
+\cleardoublepage
+\pagenumbering{arabic}
+
+\makeatletter
+\fancyhead[LE,RO]{ERES Real Estate Briefs}
+\fancyhead[LO,RE]{$for(by-author)$$it.name.literal$$sep$, $endfor$: $title$}
+\fancyfoot[C]{\thepage}
+\makeatother
+
+\newcommand{\idx}[1]{\index{#1}#1}
+% END partial before-body
+
+
+

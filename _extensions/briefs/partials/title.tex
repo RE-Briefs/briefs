@@ -1,0 +1,18 @@
+% START of partial title.tex
+$if(title)$
+\title{$title$}
+$endif$
+$if(subtitle)$
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par \textcolor[HTML]{4472c4}{\rule[5pt]{\textwidth}{5pt}}\par {\LARGE #1 \par}}{}{}
+}
+\makeatother
+\subtitle{$subtitle$}
+$endif$
+
+$if(author)$
+\author{$for(by-author)$\LARGE $it.name.literal$\\\large $for(it.affiliations)$$if(it.department)$$it.department$$if(it.name)$, $endif$$endif$$if(it.name)$$it.name$$endif$$if(it.department)$\\$elseif(it.name)$\\$endif$$endfor$$sep$\smallskip $endfor$}
+$endif$
+% END of partial title.tex

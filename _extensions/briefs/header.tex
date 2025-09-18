@@ -1,0 +1,60 @@
+% START OF HEADER.TEX
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage[top=2.0cm,bottom=1.5cm,includeheadfoot]{geometry}
+\pagestyle{fancy}
+%\usepackage[headheight=65pt,tmargin=65pt,headsep=5pt]{geometry}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0.5pt}
+%\fancyheadoffset{15mm}
+%\rhead{\raisebox{0mm}{\includegraphics[width=3cm]{region_logo_wide.png}}}
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+	\put(0,0){%
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\centering
+			\includegraphics[width=\paperwidth,height=\paperheight,%
+			keepaspectratio]{briefs-background-image.png}%
+			\vfill
+}}}
+
+% Chapter Format
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont\Large\filcenter\sffamily}
+{\titlerule[1pt]%
+	\vspace{1pt}%
+	\titlerule
+	\vspace{1pc}%
+	\LARGE\MakeUppercase{\chaptertitlename} \thechapter}
+{1pc}
+{\titlerule
+	\vspace{1pc}%
+	\Huge}
+
+\titlespacing*{\chapter}{0pt}{-50pt}{20pt}
+% End Chapter Format
+
+% Section Format
+\titleformat{\section}
+{\normalfont\Large\sffamily}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\sffamily}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\sffamily}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+
+\titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+\titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
+% End Section Format
+% END OF HEADER.TEX
